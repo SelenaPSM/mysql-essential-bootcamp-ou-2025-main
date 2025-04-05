@@ -12,49 +12,63 @@ In this lab, you will be guided through the following tasks:
 ### Prerequisites 
 
 * You will need to deploy 5 compute instances for this workshop. **Keep this in mind** 
-* The software that you are using in this workshop is trial: you are eligible to use it for 30 days, after that you have to buy or remove it
+* The software that you are using in this workshop is trial: you are eligible to **use it for 30 days, after that you have to buy or remove it**
 
 ## Task 1: Download Material
 1. Go to the link provided by your instructor, select all and download it
-    ![](images/monitor-installer-questions-part1.png "config file")
+    ![](images/resources-download.png "resources download")
 
 ## Task 1: Create VCN 
 1. Go to Menu > Networking > Virtual Cloud Network
+    ![](images/menu-vcn.png "menu vcn")
 
 2. Click on Start VCN Wizard
+    ![](images/vcn-wizard.png "vcn wizard")
 
 3. Assign a name and make sure you're using the right compartment
+    ![](images/vcn-name.png "vcn name")
 
 4. Click Next 
-
 4. Click Create
 
 
 
 ## Task 2:  Create and connect to trainer-vm 
 1. Go to Menu > Compute > Instances > Create Instance 
-2. Assign the following name
+    ![](images/menu-compute.png "menu compute")
+
+2. Assign the following name and Make sure you're using the right compartment
     ```
     <copy>trainer-vm </copy>
     ```
-3. Make sure you're using the right compartment
-4. Assign the VCN you created earlier and verify the public subnet is assigned too
-5. Select "Paste public keys" and paste the content of the file **id\_rsa\_pub** that you downloaded from the Workshop Material link provided earlier
-6. Click on Create
-7. Once that the instance is RUNNING, open the Cloud Shell 
-8. Download to your computer the private key to access the trainer-vm 
-9. Create a file for your key and paste the content of the file **id\_rsa\_priv** that you downloaded from the Workshop Material link provided earlier
+    ![](images/compute-name.png "compute name")
+
+3. Assign the VCN you created earlier and verify the public subnet is assigned too
+    ![](images/compute-vcn.png "compute vcn")
+
+4. Select "Paste public keys" and paste the content of the file **id\_rsa\_pub** that you downloaded from the Workshop Material link provided earlier
+    ![](images/compute-ssh.png "compute ssh")
+5. Click on Create
+6. Once that the instance is RUNNING, open the Cloud Shell 
+    ![](images/cloud-shell.png "cloud shell")
+
+8. It can take a couple of minutes to provision, once it's done, create a file for your key and paste the content of the file **id\_rsa\_priv** that you downloaded from the Workshop Material link provided earlier
+
     ```
-    <span style="color:green">Cloud-shell></span> <copy>nano /home/opc/.oci/id_rsa_priv </copy>
+    <span style="color:green">Cloud-shell></span> <copy>mkdir .ssh </copy>
+    ```
+
+    ```
+    <span style="color:green">Cloud-shell></span> <copy>nano .ssh/id_rsa_priv </copy>
     ```
 
 10. Fix the permissions for the file
     ```
-    <span style="color:green">Cloud-shell></span> <copy> sudo chmod 400 /home/opc/.oci/id_rsa_priv </copy>
+    <span style="color:green">Cloud-shell></span> <copy> sudo chmod 400 .ssh/id_rsa_priv </copy>
     ```
 11. Connect to the trainer-vm, make sure to add the **Public IP** of your trainer-vm compute
     ```
-    <span style="color:green">Cloud-shell></span> <copy> ssh -i /home/opc/.oci/id_rsa_priv opc@<IP-trainer-vm> </copy>
+    <span style="color:green">Cloud-shell></span> <copy> ssh -i .ssh/id_rsa_priv opc@<IP-trainer-vm> </copy>
     ```
 
 
@@ -65,16 +79,20 @@ In this lab, you will be guided through the following tasks:
     sudo yum install python36-oci-cli -y
     </copy>
     ```
-2. Go back to the trainer-vm and create a directory called .oci 
+2. Create a directory called .oci 
     ```
     <span style="color:green">trainer-vm></span> <copy>mkdir /home/opc/.oci </copy>
     ```
 
 3. On your tenancy, go to your profile 
+    ![](images/profile-oci.png "profile oci")
 
 4. Click on API Keys > Add API Key
+    ![](images/add-api.png "add-oci")
 
 5. Download BOTH the Public and private keys and save them on a dedicated folder on your computer and copy the configuration that is shown on the pop-up window
+    ![](images/key-pair.png "key pair")
+        ![](images/copy-config.png "copy config")
 
 6. Create the config file 
     ```
@@ -84,14 +102,12 @@ In this lab, you will be guided through the following tasks:
     <span style="color:green">trainer-vm></span> <copy>nano /home/opc/.oci/config </copy>
     ```
 7. Paste here the info you copied on step 5, delete the higlited portion, and replace it with the following
-    ![](images/monitor-installer-questions-part1.png "config file")
 
     ```
     <span style="color:green">trainer-vm></span> <copy>/home/opc/.oci/privapikey.pem </copy>
     ```
-
     It should look like this:
-    ![](images/monitor-installer-questions-part1.png "config file fixed")
+    ![](images/config-file.png "config file")
 
     Press Ctrl + O, then ENTER and then Ctrl + X to save and exit
 
@@ -101,10 +117,10 @@ In this lab, you will be guided through the following tasks:
     ```
 
     Open the **private** key you downloaded earlier, the one that doesn't contain "public" at the end
-    ![](images/monitor-installer-questions-part1.png "API key pair")
+    ![](images/privapi-key.png "API key pair")
 
 9. Paste the content of your **private key** in to the file you are creating, it should look lie this:
-    ![](images/monitor-installer-questions-part1.png "priv key")
+    ![](images/api-key "priv key")
 
     Press Ctrl + O, then ENTER and then Ctrl + X to save and exit
 10. Fix the permissions for the file
@@ -131,11 +147,16 @@ In this lab, you will be guided through the following tasks:
     ```
 
 2. Wait for a blue screen to show, and select option 2
+    ![](images/configure-trainer.png "configure trainer")
 3. Select the time zone that best suits you (to select it, you have to click on the parenthesis)
-4. **don't close this window** Wait for it to finish, when prompted, click Enter
+    ![](images/configure-time-zone.png "configure trainer")
+4. **don't close this window** Wait for it to finish, **when prompted to CONTINUE, click Enter**
 
 5. You'll see the blue Window again, select option 3 this time
+    ![](images/create-servers.png "create servers")
+
 6. When asked, insert **1** on the number of sets you want to create, and accept the creation of 3 servers.
+7. **don't close this window** Wait for it to finish.
 
 
 
