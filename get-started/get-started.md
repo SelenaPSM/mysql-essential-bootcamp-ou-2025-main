@@ -111,7 +111,7 @@ In this lab, you will be guided through the following tasks:
 
     Press Ctrl + O, then ENTER and then Ctrl + X to save and exit
 
-    Execute the followng instruction to fix the permissions of the config file:
+    Execute the following instruction to fix the permissions of the config file:
     
     ```
     <span style="color:green">trainer-vm></span> <copy>oci setup repair-file-permissions --file /home/opc/.oci/config </copy>
@@ -172,7 +172,7 @@ Connect with your SSH client using the public IP and the provided ssh keys, you 
 
 1. Example of connections from Linux, MAC, Windows Powershell
 	```
-    <span style="color:green">shell></span><copy> ssh -i id_rsa_app-srv opc@<public_ip></copy>
+    <span style="color:green">shell></span><copy> ssh -i /workshop/sshkeys/id_rsa_app-srv opc</copy>
     ```
 
     > **Note:**   For linux and Mac terminals, make sure to asign the right permissions to your key, use:
