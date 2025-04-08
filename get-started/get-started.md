@@ -104,12 +104,18 @@ In this lab, you will be guided through the following tasks:
 7. Paste here the info you copied on step 5, delete the higlited portion, and replace it with the following
 
     ```
-    <span style="color:green">trainer-vm></span> <copy>/home/opc/.oci/privapikey.pem </copy>
+    <copy>/home/opc/.oci/privapikey.pem </copy>
     ```
     It should look like this:
     ![](images/config-file.png "config file")
 
     Press Ctrl + O, then ENTER and then Ctrl + X to save and exit
+
+    Execute the followng instruction to fix the permissions of the config file:
+    
+    ```
+    <span style="color:green">trainer-vm></span> <copy>oci setup repair-file-permissions --file /home/opc/.oci/config </copy>
+    ```
 
 8. Create a file for your key 
     ```
