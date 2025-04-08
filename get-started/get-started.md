@@ -95,9 +95,7 @@ In this lab, you will be guided through the following tasks:
         ![](images/copy-config.png "copy config")
 
 6. Create the config file 
-    ```
-    <span style="color:green">trainer-vm></span> <copy>mkdir /home/opc/.oci </copy>
-    ```
+
     ```
     <span style="color:green">trainer-vm></span> <copy>nano /home/opc/.oci/config </copy>
     ```
@@ -143,13 +141,13 @@ In this lab, you will be guided through the following tasks:
     ```
 2. Modify the file and make it executable
     ```
-    <span style="color:green">trainer-vm></span> <copy> sudo chmod +x configure_essential_labs.sh</copy>
+    <span style="color:green">trainer-vm></span> <copy> sudo chmod +x configure_essential_labs_working.sh</copy>
     ```
 
 ## Task 5: Create app-srv y mysql servers referenced on the labs
 1. Execute it 
     ```
-    <span style="color:green">trainer-vm></span> <copy> ./configure_essential_labs.sh</copy>
+    <span style="color:green">trainer-vm></span> <copy> ./configure_essential_labs_working.sh</copy>
     ```
 
 2. Wait for a blue screen to show, and select option 2
