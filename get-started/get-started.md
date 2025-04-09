@@ -170,12 +170,12 @@ Connect with your SSH client using the public IP and the provided ssh keys, you 
 
 1. Example of connections from Linux, MAC, Windows Powershell
 	```
-    <span style="color:green">shell></span><copy> ssh -i /workshop/sshkeys/id_rsa_app-srv opc</copy>
+    <span style="color:green">shell></span><copy> ssh -i /workshop/sshkeys/id_rsa_app-srv opc@<IP-public> </copy>
     ```
 
     > **Note:**   For linux and Mac terminals, make sure to asign the right permissions to your key, use:
         ```
-        <span style="color:green">shell></span><copy>sudo chmod 600 id_rsa_app-srv</copy>
+        <span style="color:green">shell></span><copy>sudo chmod 600 /workshop/sshkeys/id_rsa_app-srv</copy>
         ```
 
 * Example of connections using PUTTY can be found in the addendum 1 of this workshop.
