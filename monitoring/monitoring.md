@@ -19,7 +19,6 @@ In this lab, you will:
 - Query Slow Query Log
 - Query Performance Schema
 - Query SYS Schema
-- View Oracle Enterprise Manager for Monitoring MySQL Live Demo
 
 ## Task 1: Install Airportdb
 
@@ -237,10 +236,6 @@ The SYS Schema is a collection of views, procedures, and functions designed to s
     <copy>select table_schema,table_name,total_latency,rows_fetched,fetch_latency,rows_inserted, insert_latency,rows_updated,update_latency,rows_deleted delete_latency,io_read_requests,io_read,io_read_latency from sys.schema_table_statistics;</copy>
     ```
 
-
-## Task 5: Oracle Enterprise Manager for Monitoring MySQL Live Demo
-
-![MYSQLEE](images/live-demo.png "live demo")
 
 
 ## Acknowledgements 
