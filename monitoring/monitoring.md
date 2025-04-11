@@ -29,10 +29,10 @@ Connect with your SSH client using the public IP and the provided ssh Example of
     <copy> ssh -i id_rsa_app-srv opc@<public_ip></copy>
     ```
 
-2. Connect to shell-mysql1
+2. Connect to mysql1 
 
     ```bash
-    <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1 </copy>
+    <copy> ssh -i $HOME/sshkeys/id_rsa_mysql1 opc@mysql1</copy>
     ```
 
 3. Download the airportdb database file

@@ -580,6 +580,12 @@ In this lab, you will:
     <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:yellow">JS</span>> <copy>cluster.status()</copy>
     ```
 
+10. Dissolve the cluster
+    ```
+    <span style="color:blue">My</span><span style="color: orange">SQL </span><span style="background-color:yellow">JS</span>> <copy>cluster.dissolve()</copy>
+    ```
+
+
 ## Acknowledgements
 
 - **Author** - Marco Carlessi, Principal Sales Consultant
